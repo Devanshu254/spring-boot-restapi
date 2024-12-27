@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import net.javaguides.springboot.bean.Student;
 
@@ -24,5 +25,13 @@ public class StudentController {
 		students.add(new Student(3, "Rohit", "Sharma"));
 		students.add(new Student(4, "Sanjaya", "Singhania"));
 		return students;
+	}
+	
+	// Spring Boot REST API application with path variable.
+	// {id} - URI template variable
+	// http://localhost:8080/students/1
+	@GetMapping("students/{id}")
+	public Student studentPathVariable(@PathVariable int id) {
+		return new Student(id, "Ramesh","Sharma");
 	}
 }
