@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import net.javaguides.springboot.bean.Student;
 
+// Rest controller is a combination of @Controller and @Response body.
 @RestController
 public class StudentController {
 	@GetMapping("student")
